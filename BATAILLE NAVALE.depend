@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1475515447 source:d:\program files (x86)\codeblocks\mingw\bataille navale\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1476777894 source:c:\users\aurore\documents\langage c\bataille navale\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
