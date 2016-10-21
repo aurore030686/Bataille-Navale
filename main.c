@@ -108,7 +108,7 @@ void attaqueIA(int map[18][24][2],int joueur){
         }
     }
 }
-
+j
 int main()
 {
     int map[18][24][2]={0};
