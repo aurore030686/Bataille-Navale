@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3061" topLine="53" />
+			<Cursor1 position="4417" topLine="46" />
 		</Cursor>
 		<Folding>
-			<Collapse line="13" />
-			<Collapse line="33" />
-			<Collapse line="37" />
+			<Collapse line="31" />
+			<Collapse line="66" />
+			<Collapse line="70" />
+			<Collapse line="79" />
 		</Folding>
 	</File>
 </CodeBlocks_layout_file>
