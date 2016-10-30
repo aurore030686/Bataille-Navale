@@ -68,9 +68,10 @@ int doRand(int startVal, int endVal){
     if(startVal == 0 && endVal == 1){
         return rand() % 2;
     }else{
-        return (rand() % ((endVal - startVal +1)) + startVal);// le dorand ne propose des coordonnées que entre 0 et 15
+        return (rand() % ((endVal - startVal +1)) + startVal);
     }
 }
+
 void placementbateaux(int map[LIGNE][COLONNE][2], int joueur,int taillebateau){
     int x = 0;
     int y = 0;
@@ -88,6 +89,25 @@ void placementbateaux(int map[LIGNE][COLONNE][2], int joueur,int taillebateau){
          map[x][y+i][joueur]=taillebateau;
          }
      }
+}
+
+int testsuperposition(int map[LIGNE][COLONNE][2],int joueur, int taillebateau){
+    int x = 0;
+    int y = 0;
+    int i = 0;
+    int j = 0;
+
+    x = doRand(0,LIGNE-1);
+    y = doRand(0,COLONNE-1);
+
+    switch(map[LIGNE][COLONNE][2]){
+        for (i=0;i<taillebateau;i++){
+            case 1: map[x+i][y][joueur]!=0;break;
+            case 2: map[x][y+i][joueur]!=0;break;
+            case 3: map[x-i][y][joueur]!=0;break;
+            case 4: map[x][y-i][joueur]!=0;break;
+        }
+    }
 }
 
 int attaque(int map[LIGNE][COLONNE][2],int attaquant,int defenseur,int tirX, int tirY){
@@ -169,14 +189,14 @@ void afficher_menu_bloquant()
     }
 }
 
-void lancer_partie(int automatique) // automatique indique si la partie est automatisée ou non
+void lancer_partie(int automatique) // automatique indique si c'st la partie IA vs IA ou IA vs Joueur
 {
     int termine = 0; // indique si le jeu est terminé ou non
     while(!termine) {
         system("cls"); // efface l'écran
 
         Color(12,0);
-        printf("BATAILLE NAVALE\n");
+        printf("~~~~~BATAILLE NAVALE~~~~~\n");
         Color(7,0);
 
         printf("\n");
@@ -191,12 +211,12 @@ void lancer_partie(int automatique) // automatique indique si la partie est auto
         if(!automatique) {
             cacherNavires = 1;
         }
-        printf("\n\n\n  0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17\n");
+
         affichemap(map,JOUEUR1, cacherNavires);//permet de cacher les navires de l'IA quand je joue contre elle
 
         printf("\n");
         printf("MAP JOUEUR 2\n");
-        printf("\n\n\n  0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17\n");
+
         affichemap(map,JOUEUR2, 0);
 
         int tirX, tirY;
